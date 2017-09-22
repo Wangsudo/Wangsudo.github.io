@@ -136,17 +136,51 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title" style="background-color:#3d3db4f;background-image:url(/images/random/vateral-12.png)" >
-  <h2>Hexo教程（一）-搭建个人博客</h2>
+  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-11.png)" >
+  <h2>hexo如何写文章</h2>
     
-  <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-04T02:36:30.000Z">
-          2017-09-04
+  <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-22T08:10:25.000Z">
+          2017-09-22
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  
+  <p>这篇文章的前提是你的hexo博客已经搭好。    <br><br>这里只简单地介绍如何创建和文章中的一些属性设置，怎么写就是用MarkDown喽，不了解的可以去了解下，MarkDown语法很简单的~<a href="http://www.jianshu.com/p/44849a738644" target="_blank" rel="external">点我有惊喜～</a></p>
+<p>##新建文章</p>
+<ul>
+<li>第一步</li>
+</ul>
+<p>打开终端，进入你的站点下</p>
+<ul>
+<li>第二步</li>
+</ul>
+<p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;a name of the new article&quot;</div></pre></td></tr></table></figure>
+<p>如果失败自己找原因<br><br>成功后会出现<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO Createed: ~/hexo/source/_posts/hexoa name of the new article.md`</div></pre></td></tr></table></figure>
+<p>这行代码显示了新建的文章的路径<br><br>说明你的文章创建成功</p>
+<ul>
+<li>第三步</li>
+</ul>
+<p>根据终端显示的路径找到你刚刚新建的文章，用支持MarkDown的编辑器打开就可以编写啦～</p>
+<p>##设置文章属性</p>
+<p>新建的文章中会出现以下代码，默认的属性设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: a name of the new article</div><div class="line">date: 你创建的时间</div><div class="line">tags: 这是这篇文章的标签</div><div class="line"></div><div class="line">---</div></pre></td></tr></table></figure>
+<p>在两条“—”之内可以设置文章的属性</p>
+<p>#####属性<br>Setting | Description | Default<br>:—–:|:—:|:—:|<br>layout|Layout|post或page<br>title|标题文章<br>date|创建文章的日期|文件的创建日期<br>update|修改日期|文件的修改日期<br>comments|是否开启评论|true<br>tags|文章标签|默认为空自己设置<br>categories|文章分类|默认为空自己设置<br>permalink|url中的名字|文件名</p>
+<p><br><br><em>每个hexo的主题下，都有对文章特殊的属性设置，例如文章背景图片呀等等</em><br><br><br><strong>ps:</strong><br><br>属性名后面的冒号应是英文冒号;<br><br>且冒号后要加空格之后再写具体内容。</p>
+<p>##生成页面<br>在终端依次输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p><em>其实第二行命令可以省略</em><br><br><em>第三行命令是同步，这需要你把环境搭建好，比如搭建在github上</em></p>
+<p>##附上本文的内容截图（请供参考）<br><img src="/images/如何写文章一.png" alt="如何写文章一"><br><br><img src="/images/如何写文章二.png" alt="如何写文章二"><br><br><img src="http://ss1.sinaimg.cn/large/005Uir5Ogy1fjsh6hfwwvj31a61ac13b&amp;690" alt="如何写文章三"><br><br><strong>PS:<br><br>对于hexo，有两种方式： <br><br>使用本地路径：在hexo/source目录下新建一个images文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。<br><br>使用微博图床，地址<a href="http://weibotuchuang.sinaapp.com/" target="_blank" rel="external">http://weibotuchuang.sinaapp.com/</a>，将图片拖入区域中，会生成图片的URL，这就是链接地址。</strong></p>
+<hr>
+<p>多说一句：<br><br>在终端输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new draft &quot;a name of the new article&quot;</div></pre></td></tr></table></figure>
+<p>是创建了草稿，在source／_drafts目录下，这个文章不会显示在页面上，链接也访问不到。</p>
+
   </div>
   <!--评论块-->
     
@@ -180,13 +214,13 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2017/09/04/hello-world/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
-    
 
 
   <!-- Next Nav -->
+    
+  <a href="/2017/09/04/hello-world/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
     
 </nav>
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>

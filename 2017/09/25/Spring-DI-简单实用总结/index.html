@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="网站关键字">
+  <meta name="description" content="愿国足能进世界杯，再愿世界和平～">
+  
+  <title>Walker&#39;s personal blog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg01.jpeg);background-color:#3d3db4f">
+    <div class="header-box"><img src="/images/header01.jpeg" ondragstart="return false;"></div>
+    <p>Walker</p>
+    <div class="nav-link">
+        
+        <a href="http://example.com" target="_blank"> <div class="link-box twitter"></div></a>
+        
+        
+        <a  href="https://github.com/Wangsudo" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        <a href="mailto:971997088@qq.com"><div class="link-box email"></div></a>
+        
+        
+        <a href="http://weibo.com/Walkerrr" target="_blank"><div class="link-box weibo"></div></a>
+        
+        
+        <a href="http://example.com" target="_blank"> <div class="link-box zhihu"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2017/09/">September 2017<span class="archive-count">5</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<li class="nav-list dropdown-btn">
+    <a   class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/Hello-World/">Hello World<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/Hexo/">Hexo<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/Spring/">Spring<span class="category-count">2</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+<li class="nav-list">
+    <a href="/about" target="_self">
+        <div class="nav-ico"><i class="material-icons">copyright</i> </div><p>关于</p>
+    </a>
+</li>
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-13.png)" >
+  <h2>Spring-DI 简单实用总结</h2>
+    
+  <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-25T12:55:55.000Z">
+          2017-09-25
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <h4 id="本文主要讲一下依赖注入和常用的set注入中的方式"><a href="#本文主要讲一下依赖注入和常用的set注入中的方式" class="headerlink" title="本文主要讲一下依赖注入和常用的set注入中的方式"></a>本文主要讲一下依赖注入和常用的set注入中的方式</h4><blockquote>
+<ol>
+<li>依赖注入<br>依赖：指bean对象的创建依赖于容器；也指bean对象的依赖资源；<br>注入：指对象依赖的资源由容器来设置和装配；</li>
+</ol>
+<ol>
+<li><p>spring注入—构造器注入（用得少）</p>
+</li>
+<li><p><strong>spring注入— setter 注入</strong><br>要求被注入的属性必须有set方法。set方法的方法名由set+属性名（首字母大写）。如果属性是boolean没有get方法是is。<br></p>
+</li>
+</ol>
+</blockquote>
+<h5 id="set注入几种形式："><a href="#set注入几种形式：" class="headerlink" title="set注入几种形式："></a>set注入几种形式：</h5><blockquote>
+<p>(a)、常量注入：<br></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=&quot;student&quot; class=&quot;com.walker.vo.Student&quot;&gt;</div><div class="line">		&lt;!-- 常量注入 --&gt;</div><div class="line">		&lt;property name=&quot;name&quot; value=&quot;student_walker&quot;&gt;&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(b)、bean注入：<br></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- bean注入 --&gt;</div><div class="line">		&lt;property name=&quot;address&quot; ref=&quot;address&quot;&gt;&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(c)、数组注入： </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!-- 数组注入 --&gt;</div><div class="line">	&lt;property name=&quot;books&quot;&gt;</div><div class="line">		&lt;array&gt;</div><div class="line">			&lt;value&gt;水浒传&lt;/value&gt;</div><div class="line">			&lt;value&gt;三国演义&lt;/value&gt;</div><div class="line">			&lt;value&gt;红楼梦&lt;/value&gt;</div><div class="line">		&lt;/array&gt;</div><div class="line">	&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(d)、List注入：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- List注入 --&gt;</div><div class="line">		&lt;property name=&quot;hobbies&quot;&gt;</div><div class="line">			&lt;list&gt;</div><div class="line">				&lt;value&gt;篮球&lt;/value&gt;</div><div class="line">				&lt;value&gt;足球&lt;/value&gt;</div><div class="line">			&lt;/list&gt;</div><div class="line">		&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(e)、Map注入：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- Map注入 --&gt;</div><div class="line">    &lt;!-- Map注入 --&gt;</div><div class="line">		&lt;property name=&quot;score&quot;&gt;</div><div class="line">			&lt;map&gt;</div><div class="line">				&lt;entry key=&quot;语文&quot; value=&quot;90&quot; /&gt;</div><div class="line">				&lt;entry&gt;</div><div class="line">					&lt;key&gt;</div><div class="line">						&lt;value&gt;数学&lt;/value&gt;</div><div class="line">					&lt;/key&gt;</div><div class="line">					&lt;value&gt;100&lt;/value&gt;</div><div class="line">				&lt;/entry&gt;</div><div class="line">			&lt;/map&gt;</div><div class="line">		&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(f)Set注入：<br></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    &lt;!-- Set注入 --&gt;</div><div class="line">&lt;property name=&quot;games&quot;&gt;</div><div class="line">	&lt;set&gt;</div><div class="line">		&lt;value&gt;lol&lt;/value&gt;</div><div class="line">		&lt;value&gt;dota&lt;/value&gt;</div><div class="line">	&lt;/set&gt;</div><div class="line">&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(g)Null注入：<br></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- Null注入 --&gt;</div><div class="line">		&lt;property name=&quot;grilFriend&quot;&gt;</div><div class="line">			&lt;null&gt;&lt;/null&gt;</div><div class="line">		&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(h)、Properties注入：<br></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!-- Properties注入 --&gt;</div><div class="line">&lt;property name=&quot;info&quot;&gt;</div><div class="line">			&lt;props&gt;</div><div class="line">				&lt;prop key=&quot;学号&quot;&gt;14102012&lt;/prop&gt;</div><div class="line">				&lt;prop key=&quot;学院&quot;&gt;software&lt;/prop&gt;</div><div class="line">				&lt;prop key=&quot;性别&quot;&gt;male&lt;/prop&gt;</div><div class="line">			&lt;/props&gt;</div><div class="line">		&lt;/property&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(i)、p命名空间注入：<br></p>
+</blockquote>
+<p><strong>要在头文件中加入p标签</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</div></pre></td></tr></table></figure>
+<p><strong>使用p标签还是要实现set方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!-- p命名空间注入 --&gt;</div><div class="line">&lt;bean id=&quot;user&quot; class=&quot;com.walker.vo.User&quot; p:name=&quot;DN&quot; p:age=&quot;12&quot;&gt;</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>(j)、c命名空间注入：<br></p>
+</blockquote>
+<p><strong>要在头标签中加入c标签</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xmlns:c=&quot;http://www.springframework.org/schema/c&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=&quot;user_c&quot; class=&quot;com.walker.vo.User&quot; p:name=&quot;DN_c&quot; p:age=&quot;12&quot;&gt;</div><div class="line">	&lt;/bean&gt;</div></pre></td></tr></table></figure>
+<h4 id="OVER"><a href="#OVER" class="headerlink" title="OVER"></a>OVER</h4><p><strong>为了记录，为了记住</strong></p>
+
+  </div>
+  <!--评论块-->
+    
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="walkerrr.disqus.com"><button style="margin: 0 auto;background-color:#3d3db4f " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
+
+  <script>
+
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+      function disqus() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'),v = d.createElement('script'),disquUrl=document.getElementById("disqus_thread").dataset.diaque;
+          v.id = 'dsq-count-scr'
+          v.src= '//'+disquUrl+'/count.js';
+          s.src = 'https://'+disquUrl+'/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(v);
+          (d.head || d.body).appendChild(s);
+      }
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2017/09/23/理解Spring-IoC（一）-简单例子深入理解/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#本文主要讲一下依赖注入和常用的set注入中的方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">本文主要讲一下依赖注入和常用的set注入中的方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#set注入几种形式："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">set注入几种形式：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#OVER"><span class="post-toc-number">2.</span> <span class="post-toc-text">OVER</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#3d3db4f"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p >Copyright ©  2017  Walker&#39;s personal blog</p>
+<p >Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> & Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+<p style="font-size: 10px" id="footer-times" data-time="9/5/2017 00:00:00"></p>
+<script>
+    var beginTime=document.getElementById("footer-times").dataset.time
+    function show_date_time(){
+        var span=document.getElementById("footer-times")
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay=new Date(beginTime);//初始日期
+        today=new Date();
+        timeold=(today.getTime()-BirthDay.getTime());
+        sectimeold=timeold/1000
+        secondsold=Math.floor(sectimeold);
+        msPerDay=24*60*60*1000
+        e_daysold=timeold/msPerDay
+        daysold=Math.floor(e_daysold);
+        e_hrsold=(e_daysold-daysold)*24;
+        hrsold=Math.floor(e_hrsold);
+        e_minsold=(e_hrsold-hrsold)*60;
+        minsold=Math.floor((e_hrsold-hrsold)*60);
+        seconds=Math.floor((e_minsold-minsold)*60);
+        span.innerHTML="本站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+    }
+    show_date_time();
+</script>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+</body>
+</html>

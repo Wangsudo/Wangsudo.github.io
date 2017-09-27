@@ -136,90 +136,63 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-7.png)" >
-  <h2>Hexo教程（二）-如何写文章</h2>
+  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-5.png)" >
+  <h2>Spring-bean的作用域与自动装配</h2>
     
-  <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-22T08:10:25.000Z">
-          2017-09-22
+  <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-26T01:42:25.000Z">
+          2017-09-26
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  <p>这篇文章的前提是你的hexo博客已经搭好。    <br><br>这里只简单地介绍如何创建和文章中的一些属性设置，怎么写就是用MarkDown喽，不了解的可以去了解下，MarkDown语法很简单的~<a href="http://www.jianshu.com/p/44849a738644" target="_blank" rel="external">点我有惊喜～</a></p>
-<h4 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h4><h5 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h5><p>打开终端，进入你的站点下</p>
-<h5 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h5><p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;a name of the new article&quot;</div></pre></td></tr></table></figure>
-<p>如果失败自己找原因<br><br>成功后会出现<br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO Createed: ~/hexo/source/_posts/hexoa name of the new article.md`</div></pre></td></tr></table></figure>
-<p>这行代码显示了新建的文章的路径<br><br>说明你的文章创建成功</p>
-<h5 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h5><p>根据终端显示的路径找到你刚刚新建的文章，用支持MarkDown的编辑器打开就可以编写啦～</p>
-<h4 id="设置文章属性"><a href="#设置文章属性" class="headerlink" title="设置文章属性"></a>设置文章属性</h4><p>新建的文章中会出现以下代码，默认的属性设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: a name of the new article</div><div class="line">date: 你创建的时间</div><div class="line">tags: 这是这篇文章的标签</div><div class="line"></div><div class="line">---</div></pre></td></tr></table></figure>
-<p>在两条<code>---</code>之内可以设置文章的属性</p>
-<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><table>
-<thead>
-<tr>
-<th style="text-align:center">Setting</th>
-<th style="text-align:center">Description</th>
-<th style="text-align:center">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">layout</td>
-<td style="text-align:center">Layout</td>
-<td style="text-align:center">post或page</td>
-</tr>
-<tr>
-<td style="text-align:center">title</td>
-<td style="text-align:center">标题文章</td>
-</tr>
-<tr>
-<td style="text-align:center">date</td>
-<td style="text-align:center">创建文章的日期</td>
-<td style="text-align:center">文件的创建日期</td>
-</tr>
-<tr>
-<td style="text-align:center">update</td>
-<td style="text-align:center">修改日期</td>
-<td style="text-align:center">文件的修改日期</td>
-</tr>
-<tr>
-<td style="text-align:center">comments</td>
-<td style="text-align:center">是否开启评论</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td style="text-align:center">tags</td>
-<td style="text-align:center">文章标签</td>
-<td style="text-align:center">默认为空自己设置</td>
-</tr>
-<tr>
-<td style="text-align:center">categories</td>
-<td style="text-align:center">文章分类</td>
-<td style="text-align:center">默认为空自己设置</td>
-</tr>
-<tr>
-<td style="text-align:center">permalink</td>
-<td style="text-align:center">url中的名字</td>
-<td style="text-align:center">文件名</td>
-</tr>
-</tbody>
-</table>
-<p><br><br><em>每个hexo的主题下，都有对文章特殊的属性设置，例如文章背景图片呀等等</em><br><br><br><strong><em>ps:<br><br>属性名后面的冒号应是英文冒号;<br><br>且冒号后要加空格之后再写具体内容。</em></strong></p>
-<h4 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h4><p>在终端依次输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
-<p><em>其实第二行命令可以省略</em><br><br><em>第三行命令是同步，这需要你把环境搭建好，比如搭建在github上</em></p>
-<h4 id="附上本文的内容截图（请供参考）"><a href="#附上本文的内容截图（请供参考）" class="headerlink" title="附上本文的内容截图（请供参考）"></a>附上本文的内容截图（请供参考）</h4><p><img src="/images/如何写文章1.png" alt="如何写文章一"><br><br><img src="/images/如何写文章2.png" alt="如何写文章二"><br><br><img src="/images/如何写文章3.png" alt="如何写文章三"><br><br><img src="/images/如何写文章4.png" alt="如何写文章三"><br><br><img src="/images/如何写文章5.png" alt="如何写文章三"><br></p>
-<p><strong><em>PS:<br><br>对于hexo文章插入图片url： <br><br>使用本地路径：在hexo/source目录下新建一个images文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。<br></em></strong></p>
-<hr>
-<h4 id="多说一句："><a href="#多说一句：" class="headerlink" title="多说一句："></a>多说一句：<br></h4><p>在终端输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new draft &quot;a name of the new article&quot;</div></pre></td></tr></table></figure>
-<p>是创建了草稿，在source／_drafts目录下，这个文章不会显示在页面上，链接也访问不到。</p>
-<p><strong><em>感谢阅读～～</em></strong></p>
+  <h3 id="bean的作用域"><a href="#bean的作用域" class="headerlink" title="bean的作用域"></a>bean的作用域</h3><blockquote>
+<p>由配置文件中<bean>标签中scop属性确定的，若不设定，默认为单例</bean></p>
+</blockquote>
+<h4 id="singleton单例"><a href="#singleton单例" class="headerlink" title="singleton单例"></a>singleton单例</h4><blockquote>
+<p>整个容器只有一个对象实例</p>
+</blockquote>
+<h4 id="prototype原型"><a href="#prototype原型" class="headerlink" title="prototype原型"></a>prototype原型</h4><blockquote>
+<p>每次获取bean都产生一个新的对象</p>
+</blockquote>
+<h4 id="request"><a href="#request" class="headerlink" title="request"></a>request</h4><blockquote>
+<p>每次请求时创建一个新的对象</p>
+</blockquote>
+<h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><blockquote>
+<p>在会话的范围内时的一个对象，这里指的是http中的session</p>
+</blockquote>
+<h4 id="global-session"><a href="#global-session" class="headerlink" title="global session"></a>global session</h4><blockquote>
+<p>只在portlet下有用，表示是application</p>
+</blockquote>
+<h4 id="application"><a href="#application" class="headerlink" title="application"></a>application</h4><blockquote>
+<p>在应用范围中一个对象</p>
+</blockquote>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><blockquote>
+<p><strong>在整合struts2和spring的时候，要将action设为scope=“prototype”</strong></p>
+</blockquote>
+<h3 id="自动装配-简化spring配置文件"><a href="#自动装配-简化spring配置文件" class="headerlink" title="自动装配-简化spring配置文件"></a>自动装配-简化spring配置文件</h3><blockquote>
+<p>在配置bean时，可以配置bean的autowire属性，用于指定装配类型。</p>
+</blockquote>
+<h4 id="no"><a href="#no" class="headerlink" title="no"></a>no</h4><blockquote>
+<p>不使用自动装配</p>
+</blockquote>
+<h4 id="byName"><a href="#byName" class="headerlink" title="byName"></a>byName</h4><blockquote>
+<p>根据名称（set方法名来的）去查找相应的bean，如果有则装配上。</p>
+</blockquote>
+<h4 id="byType"><a href="#byType" class="headerlink" title="byType"></a>byType</h4><blockquote>
+<p>根据类型进行自动装配，不用管bean的id，但是同一种类型的bean只能有一个，建议慎用。</p>
+</blockquote>
+<h4 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h4><blockquote>
+<p>当通过构造器注入 实例化bean时 适用byType的方式  装配构造方法</p>
+</blockquote>
+<h4 id="配置全局的自动装配类型"><a href="#配置全局的自动装配类型" class="headerlink" title="配置全局的自动装配类型"></a>配置全局的自动装配类型</h4><blockquote>
+<p>在头部配置default-autowire</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</div><div class="line">    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans</div><div class="line">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot; default-autowire=&quot;byName&quot;&gt;</div></pre></td></tr></table></figure>
+<h4 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h4><blockquote>
+<p><strong>不使用自动分配而使用annotation</strong></p>
+</blockquote>
+<h3 id="OVER"><a href="#OVER" class="headerlink" title="OVER"></a>OVER</h3><p><strong>出门在外,在哪都是锻炼</strong></p>
 
   </div>
   <!--评论块-->
@@ -254,7 +227,7 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2017/09/23/理解Spring-IoC（一）-简单例子深入理解/" id="post_nav-newer" class="post-nav-content prev-content">
+  <a href="/2017/09/26/理解Spring之静态代理-简单例子深入理解/" id="post_nav-newer" class="post-nav-content prev-content">
       新篇
   </a>
     
@@ -262,7 +235,7 @@
 
   <!-- Next Nav -->
     
-  <a href="/2017/09/21/hello-world/" id="post_nav-older" class="post-nav-content next-content">
+  <a href="/2017/09/25/Spring-DI-简单实用总结/" id="post_nav-older" class="post-nav-content next-content">
       旧篇
   </a>
     
@@ -270,7 +243,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建文章"><span class="post-toc-number">1.</span> <span class="post-toc-text">新建文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第一步"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一步</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第二步"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二步</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第三步"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">第三步</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置文章属性"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置文章属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#属性"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#生成页面"><span class="post-toc-number">3.</span> <span class="post-toc-text">生成页面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#附上本文的内容截图（请供参考）"><span class="post-toc-number">4.</span> <span class="post-toc-text">附上本文的内容截图（请供参考）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多说一句："><span class="post-toc-number">5.</span> <span class="post-toc-text">多说一句：</span></a></li></ol>
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#bean的作用域"><span class="post-toc-number">1.</span> <span class="post-toc-text">bean的作用域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#singleton单例"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">singleton单例</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#prototype原型"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">prototype原型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#request"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">request</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#session"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">session</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#global-session"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">global session</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#application"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">application</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动装配-简化spring配置文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">自动装配-简化spring配置文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#no"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">no</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#byName"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">byName</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#byType"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">byType</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#constructor-NaN"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">constructor</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置全局的自动装配类型"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">配置全局的自动装配类型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#建议"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">建议</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OVER"><span class="post-toc-number">3.</span> <span class="post-toc-text">OVER</span></a></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">

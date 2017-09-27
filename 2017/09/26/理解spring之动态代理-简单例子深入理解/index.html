@@ -136,91 +136,17 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-7.png)" >
-  <h2>Hexo教程（二）-如何写文章</h2>
+  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-10.png)" >
+  <h2>理解spring之动态代理-简单例子深入理解</h2>
     
-  <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-22T08:10:25.000Z">
-          2017-09-22
+  <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-26T09:50:58.000Z">
+          2017-09-26
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  <p>这篇文章的前提是你的hexo博客已经搭好。    <br><br>这里只简单地介绍如何创建和文章中的一些属性设置，怎么写就是用MarkDown喽，不了解的可以去了解下，MarkDown语法很简单的~<a href="http://www.jianshu.com/p/44849a738644" target="_blank" rel="external">点我有惊喜～</a></p>
-<h4 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h4><h5 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h5><p>打开终端，进入你的站点下</p>
-<h5 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h5><p>输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;a name of the new article&quot;</div></pre></td></tr></table></figure>
-<p>如果失败自己找原因<br><br>成功后会出现<br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO Createed: ~/hexo/source/_posts/hexoa name of the new article.md`</div></pre></td></tr></table></figure>
-<p>这行代码显示了新建的文章的路径<br><br>说明你的文章创建成功</p>
-<h5 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h5><p>根据终端显示的路径找到你刚刚新建的文章，用支持MarkDown的编辑器打开就可以编写啦～</p>
-<h4 id="设置文章属性"><a href="#设置文章属性" class="headerlink" title="设置文章属性"></a>设置文章属性</h4><p>新建的文章中会出现以下代码，默认的属性设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: a name of the new article</div><div class="line">date: 你创建的时间</div><div class="line">tags: 这是这篇文章的标签</div><div class="line"></div><div class="line">---</div></pre></td></tr></table></figure>
-<p>在两条<code>---</code>之内可以设置文章的属性</p>
-<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><table>
-<thead>
-<tr>
-<th style="text-align:center">Setting</th>
-<th style="text-align:center">Description</th>
-<th style="text-align:center">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">layout</td>
-<td style="text-align:center">Layout</td>
-<td style="text-align:center">post或page</td>
-</tr>
-<tr>
-<td style="text-align:center">title</td>
-<td style="text-align:center">标题文章</td>
-</tr>
-<tr>
-<td style="text-align:center">date</td>
-<td style="text-align:center">创建文章的日期</td>
-<td style="text-align:center">文件的创建日期</td>
-</tr>
-<tr>
-<td style="text-align:center">update</td>
-<td style="text-align:center">修改日期</td>
-<td style="text-align:center">文件的修改日期</td>
-</tr>
-<tr>
-<td style="text-align:center">comments</td>
-<td style="text-align:center">是否开启评论</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td style="text-align:center">tags</td>
-<td style="text-align:center">文章标签</td>
-<td style="text-align:center">默认为空自己设置</td>
-</tr>
-<tr>
-<td style="text-align:center">categories</td>
-<td style="text-align:center">文章分类</td>
-<td style="text-align:center">默认为空自己设置</td>
-</tr>
-<tr>
-<td style="text-align:center">permalink</td>
-<td style="text-align:center">url中的名字</td>
-<td style="text-align:center">文件名</td>
-</tr>
-</tbody>
-</table>
-<p><br><br><em>每个hexo的主题下，都有对文章特殊的属性设置，例如文章背景图片呀等等</em><br><br><br><strong><em>ps:<br><br>属性名后面的冒号应是英文冒号;<br><br>且冒号后要加空格之后再写具体内容。</em></strong></p>
-<h4 id="生成页面"><a href="#生成页面" class="headerlink" title="生成页面"></a>生成页面</h4><p>在终端依次输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
-<p><em>其实第二行命令可以省略</em><br><br><em>第三行命令是同步，这需要你把环境搭建好，比如搭建在github上</em></p>
-<h4 id="附上本文的内容截图（请供参考）"><a href="#附上本文的内容截图（请供参考）" class="headerlink" title="附上本文的内容截图（请供参考）"></a>附上本文的内容截图（请供参考）</h4><p><img src="/images/如何写文章1.png" alt="如何写文章一"><br><br><img src="/images/如何写文章2.png" alt="如何写文章二"><br><br><img src="/images/如何写文章3.png" alt="如何写文章三"><br><br><img src="/images/如何写文章4.png" alt="如何写文章三"><br><br><img src="/images/如何写文章5.png" alt="如何写文章三"><br></p>
-<p><strong><em>PS:<br><br>对于hexo文章插入图片url： <br><br>使用本地路径：在hexo/source目录下新建一个images文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。<br></em></strong></p>
-<hr>
-<h4 id="多说一句："><a href="#多说一句：" class="headerlink" title="多说一句："></a>多说一句：<br></h4><p>在终端输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new draft &quot;a name of the new article&quot;</div></pre></td></tr></table></figure>
-<p>是创建了草稿，在source／_drafts目录下，这个文章不会显示在页面上，链接也访问不到。</p>
-<p><strong><em>感谢阅读～～</em></strong></p>
-
+  
   </div>
   <!--评论块-->
     
@@ -254,15 +180,11 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2017/09/23/理解Spring-IoC（一）-简单例子深入理解/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
-    
 
 
   <!-- Next Nav -->
     
-  <a href="/2017/09/21/hello-world/" id="post_nav-older" class="post-nav-content next-content">
+  <a href="/2017/09/26/理解Spring之静态代理-简单例子深入理解/" id="post_nav-older" class="post-nav-content next-content">
       旧篇
   </a>
     
@@ -270,7 +192,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建文章"><span class="post-toc-number">1.</span> <span class="post-toc-text">新建文章</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第一步"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一步</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第二步"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">第二步</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第三步"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">第三步</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置文章属性"><span class="post-toc-number">2.</span> <span class="post-toc-text">设置文章属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#属性"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#生成页面"><span class="post-toc-number">3.</span> <span class="post-toc-text">生成页面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#附上本文的内容截图（请供参考）"><span class="post-toc-number">4.</span> <span class="post-toc-text">附上本文的内容截图（请供参考）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多说一句："><span class="post-toc-number">5.</span> <span class="post-toc-text">多说一句：</span></a></li></ol>
+    
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">

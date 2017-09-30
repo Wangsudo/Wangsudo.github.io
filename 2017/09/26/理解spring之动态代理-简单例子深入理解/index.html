@@ -136,7 +136,7 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-19.png)" >
+  <div class="post-page-title"  style="background-color:#3d3db4f;background-image:url(/images/random/vateral-15.png)" >
   <h2>理解spring之动态代理-简单例子深入理解</h2>
     
   <p>作者:Walker &nbsp&nbsp 发布于:<time datetime="2017-09-26T09:50:58.000Z">
@@ -146,7 +146,36 @@
     
   </div>
   <div class="post-page-content">
-  
+  <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>动态代理知识的理解，需要了解java反射机制和静态代理。</p>
+<blockquote>
+<p>动态代理和静态代理的角色是一样的<br>动态代理的代理类是动态生成的<br>分为两类一类基于接口动态代理和基于类的动态代理</p>
+<blockquote>
+<p>基于接口动态代理—jdk动态代理<br>基于类的动态代理—cglib<br>现在是javasist来生成动态代理</p>
+</blockquote>
+</blockquote>
+<p><em>今天就介绍jdk动态代理—Proxy类和InovationHandler</em></p>
+<p><strong>例子里的注释写的比较详细就直接上代码了</strong></p>
+<h5 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h5><blockquote>
+<p>UserService.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">package com.walker.service;</div><div class="line"></div><div class="line">public interface UserService &#123;</div><div class="line">	public void add();</div><div class="line"></div><div class="line">	public void delete();</div><div class="line"></div><div class="line">	public void update();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>UserServiceImpl.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">package com.walker.service;</div><div class="line"></div><div class="line">public class UserServiceImpl implements UserService &#123;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void add() &#123;</div><div class="line">		System.out.println(&quot;添加用户&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void delete() &#123;</div><div class="line">		System.out.println(&quot;删除用户&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void update() &#123;</div><div class="line">		System.out.println(&quot;更新用户&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>以上都是和静态代理一样的，创建抽象角色接口和真实角色</p>
+<p><strong>ProxyInovationHandler.java</strong>     代理角色</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">package com.walker.service;</div><div class="line"></div><div class="line">import java.lang.reflect.InvocationHandler;</div><div class="line">import java.lang.reflect.Method;</div><div class="line">import java.lang.reflect.Proxy;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 实现InovationHandler，把我们想要通过代理者给被代理者追加的操作都写在invoke方法里面</div><div class="line"> * </div><div class="line"> * @author shunw</div><div class="line"> *</div><div class="line"> */</div><div class="line">public class ProxyInovationHandler implements InvocationHandler &#123;</div><div class="line">	// 需要一个被代理类的实例</div><div class="line">	private Object target;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * 创建一个代理类并确定被代理类的实例</div><div class="line">	 * </div><div class="line">	 * @return</div><div class="line">	 */</div><div class="line">	public Object createProxy(Object target) &#123;</div><div class="line">		this.target = target;</div><div class="line">		// 第一个参数Loader 类加载器，第二个参数是代理类要实现的接口，第三个就是InvocationHandler</div><div class="line">		return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * proxy 代理类实例，对代理者做一些操作可以使用这个参数 method 被执行的方法 args 执行该方法所需的参数。</div><div class="line">	 * </div><div class="line">	 * 我们需要记住的是：当执行代理者的某个方法的时候，最后跑的都是invoke方法。</div><div class="line">	 */</div><div class="line">	@Override</div><div class="line">	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable &#123;</div><div class="line">		log(method.getName());</div><div class="line">		Object result = method.invoke(target, args);</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void log(String methodName) &#123;</div><div class="line">		System.out.println(&quot;调用了&quot; + methodName + &quot;方法&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Client.java</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">package com.walker.test;</div><div class="line"></div><div class="line">import java.lang.reflect.Proxy;</div><div class="line"></div><div class="line">import com.walker.service.ProxyInovationHandler;</div><div class="line">import com.walker.service.UserService;</div><div class="line">import com.walker.service.UserServiceImpl;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 客户</div><div class="line"> * </div><div class="line"> * @author shunw</div><div class="line"> *</div><div class="line"> */</div><div class="line">public class Client &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		// 创建一个被代理类的实例</div><div class="line">		UserService userService = new UserServiceImpl();</div><div class="line">		// 创建一个InvocationHandler ，是代理实例的调用程序方法的接口，可以理解为对调用此接口的代理类实例中业务操作的一个修饰</div><div class="line">		ProxyInovationHandler pih = new ProxyInovationHandler();</div><div class="line">		// 创建一个代理类proxy 我把创建代理类封装在InvocationHandler中了，并提供了createProxy接口</div><div class="line">		// InovatonHandler 确定了被代理实例后在这里也可以这样写：UserService userServiceProxy =</div><div class="line">		// (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader(),</div><div class="line">		// userService.getClass().getInterfaces(), pih);</div><div class="line">		UserService userServiceProxy = (UserService) pih.createProxy(userService);</div><div class="line">		// 使用代理类进行操作</div><div class="line">		userServiceProxy.add();</div><div class="line">		userServiceProxy.delete();</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>优点就是静态代理的优点，并且把静态代理的缺点解决了。<br><br>一个动态代理，一般代理某一类业务；一个动态代理可以代理多个类</p>
+<h5 id="OVER"><a href="#OVER" class="headerlink" title="OVER"></a>OVER</h5><p><strong>多一些不为什么的坚持，少一些功利主义的追求</strong></p>
+<h6 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h6><p><a href="https://wangsudo.github.io/2017/09/26/理解spring之静态代理-简单例子深入理解/">理解spring之静态代理-简单例子深入理解</a></p>
+
   </div>
   <!--评论块-->
     
@@ -192,7 +221,7 @@
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#编码"><span class="post-toc-number">2.</span> <span class="post-toc-text">编码</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">总结</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#OVER"><span class="post-toc-number">4.</span> <span class="post-toc-text">OVER</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#相关阅读"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">相关阅读</span></a></li></ol></li></ol>
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
